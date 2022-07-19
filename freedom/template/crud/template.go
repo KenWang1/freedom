@@ -55,7 +55,7 @@ func FunTemplatePackage() string {
 	package repository
 	import (
 		"errors"
-		"github.com/8treenet/freedom"
+		"github.com/KenWang1/freedom"
 		"gorm.io/gorm"
 		"gorm.io/gorm/clause"
 		"time"

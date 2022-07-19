@@ -12,7 +12,7 @@ func controllerTemplate() string {
 	package controller
 
 	import (
-		"github.com/8treenet/freedom"
+		"github.com/KenWang1/freedom"
 		"{{.PackagePath}}/domain"
 		"{{.PackagePath}}/infra"
 	)

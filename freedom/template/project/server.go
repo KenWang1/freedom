@@ -49,14 +49,14 @@ func mainTemplate() string {
 	import (
 		"time"
 		"gorm.io/driver/mysql"
-		"github.com/8treenet/freedom"
+		"github.com/KenWang1/freedom"
 		_ "{{.PackagePath}}/adapter/repository" //Implicit initialization repository
 		_ "{{.PackagePath}}/adapter/controller" //Implicit initialization controller
 		"{{.PackagePath}}/server/conf"
 		"github.com/go-redis/redis"
 		"gorm.io/gorm"
-		"github.com/8treenet/freedom/middleware"
-		"github.com/8treenet/freedom/infra/requests"
+		"github.com/KenWang1/freedom/middleware"
+		"github.com/KenWang1/freedom/infra/requests"
 	)
 	
 	func main() {

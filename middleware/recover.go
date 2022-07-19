@@ -7,12 +7,12 @@ import (
 
 	"github.com/kataras/iris/v12/context"
 
-	"github.com/8treenet/freedom"
+	"github.com/KenWang1/freedom"
 )
 
 // NewRecover Request recover.
 func NewRecover() context.Handler {
-	return func(ctx context.Context) {
+	return func(ctx *context.Context) {
 		defer func() {
 			if err := recover(); err != nil {
 				if ctx.IsStopped() {

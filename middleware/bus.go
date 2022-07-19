@@ -3,7 +3,7 @@ package middleware
 import (
 	"strings"
 
-	"github.com/8treenet/freedom"
+	"github.com/KenWang1/freedom"
 )
 
 // NewBusFilter Worker's middleware, filtering HTTP Header.

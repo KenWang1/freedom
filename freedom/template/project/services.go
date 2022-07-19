@@ -14,7 +14,7 @@ func servicesTemplate() string {
 	package domain
 
 	import (
-		"github.com/8treenet/freedom"
+		"github.com/KenWang1/freedom"
 		"{{.PackagePath}}/adapter/repository"
 	)
 	

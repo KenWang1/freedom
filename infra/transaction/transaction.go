@@ -6,7 +6,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/8treenet/freedom"
+	"github.com/KenWang1/freedom"
 	"gorm.io/gorm"
 )
 

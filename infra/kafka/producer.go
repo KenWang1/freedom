@@ -3,7 +3,7 @@ package kafka
 import (
 	"strings"
 
-	"github.com/8treenet/freedom"
+	"github.com/KenWang1/freedom"
 	"github.com/Shopify/sarama"
 	uuid "github.com/iris-contrib/go.uuid"
 )

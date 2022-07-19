@@ -17,7 +17,7 @@ func jsonRequestTemplate() string {
 	
 		"reflect"
 		"encoding/json"
-		"github.com/8treenet/freedom"
+		"github.com/KenWang1/freedom"
 		"gopkg.in/go-playground/validator.v9"
 	)
 	
@@ -111,7 +111,7 @@ func jsonResponseTemplate() string {
 		"encoding/json"
 		"strconv"
 	
-		"github.com/8treenet/freedom"
+		"github.com/KenWang1/freedom"
 		"github.com/kataras/iris/v12/hero"
 	)
 	

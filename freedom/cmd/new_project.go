@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"text/template"
 
-	"github.com/8treenet/freedom/freedom/template/project"
+	"github.com/KenWang1/freedom/freedom/template/project"
 
 	"github.com/spf13/cobra"
 )

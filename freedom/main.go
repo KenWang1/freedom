@@ -1,6 +1,6 @@
 package main
 
-import "github.com/8treenet/freedom/freedom/cmd"
+import "github.com/KenWang1/freedom/freedom/cmd"
 
 func main() {
 	cmd.Execute()

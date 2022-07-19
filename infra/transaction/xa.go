@@ -1,7 +1,7 @@
 package transaction
 
 import (
-	"github.com/8treenet/freedom"
+	"github.com/KenWang1/freedom"
 )
 
 // XA .

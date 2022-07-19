@@ -12,8 +12,8 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/8treenet/freedom/freedom/template/crud"
 	"github.com/BurntSushi/toml"
+	"github.com/KenWang1/freedom/freedom/template/crud"
 	"github.com/spf13/cobra"
 )
 

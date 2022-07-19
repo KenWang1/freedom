@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/8treenet/freedom"
+	"github.com/KenWang1/freedom"
 	"github.com/go-redis/redis"
 )
 

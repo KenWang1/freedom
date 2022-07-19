@@ -10,7 +10,7 @@ func repositoryTemplate() string {
 	package repository
 
 	import (
-		"github.com/8treenet/freedom"
+		"github.com/KenWang1/freedom"
 		"gorm.io/gorm"
 	)
 	

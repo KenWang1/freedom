@@ -1,7 +1,7 @@
 package freedom
 
 import (
-	"github.com/8treenet/freedom/internal"
+	"github.com/KenWang1/freedom/internal"
 	"github.com/go-redis/redis"
 	"github.com/kataras/golog"
 	"github.com/kataras/iris/v12"

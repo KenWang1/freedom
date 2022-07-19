@@ -15,7 +15,7 @@ func confTemplate() string {
 		"runtime"
 		"os"
 		"sync"
-		"github.com/8treenet/freedom"
+		"github.com/KenWang1/freedom"
 	)
 
 	func init() {

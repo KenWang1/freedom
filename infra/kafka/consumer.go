@@ -8,9 +8,9 @@ import (
 
 	"go.uber.org/ratelimit"
 
-	"github.com/8treenet/freedom/infra/requests"
+	"github.com/KenWang1/freedom/infra/requests"
 
-	"github.com/8treenet/freedom"
+	"github.com/KenWang1/freedom"
 	"github.com/Shopify/sarama"
 )
 

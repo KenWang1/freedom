@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/8treenet/freedom/infra/requests"
+	"github.com/KenWang1/freedom/infra/requests"
 	"github.com/prometheus/client_golang/prometheus"
 )
 
