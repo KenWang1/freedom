@@ -4,7 +4,7 @@ func init() {
 	content["/server/conf/app.toml"] = appTomlConf()
 	content["/server/conf/db.toml"] = dbTomlConf()
 	content["/server/conf/redis.toml"] = redisConf()
-	content["/server/main.go"] = mainTemplate()
+	content["/main.go"] = mainTemplate()
 }
 
 func appTomlConf() string {
@@ -47,6 +47,7 @@ func mainTemplate() string {
 	package main
 
 	import (
+		"fmt"
 		"time"
 		"gorm.io/driver/mysql"
 		"github.com/KenWang1/freedom"
@@ -57,14 +58,13 @@ func mainTemplate() string {
 		"gorm.io/gorm"
 		"github.com/KenWang1/freedom/middleware"
 		"github.com/KenWang1/freedom/infra/requests"
+		"github.com/iris-contrib/swagger/v12"
+		"github.com/iris-contrib/swagger/v12/swaggerFiles"
 	)
 	
 	func main() {
 		app := freedom.NewApplication()
 		/*
-			installDatabase(app)
-			installRedis(app)
-
 			HTTP/2 h2c Runner
 			runner := app.NewH2CRunner(conf.Get().App.Other["listen_addr"].(string))
 			HTTP/2 AutoTLS Runner
@@ -72,7 +72,10 @@ func mainTemplate() string {
 			HTTP/2 TLS Runner
 			runner := app.NewTLSRunner(":443", "certFile", "keyFile")
 		*/
+		installDatabase(app)
+		installRedis(app)
 		installMiddleware(app)
+		installSwagger(app)
 		runner := app.NewRunner(conf.Get().App.Other["listen_addr"].(string))
 		//app.InstallParty("/{{.PackageName}}")
 		liveness(app)
@@ -93,6 +96,20 @@ func mainTemplate() string {
 				
 		//HTTP request link middleware that controls the header transmission of requests.
 		app.InstallBusMiddleware(middleware.NewBusFilter())
+	}
+
+	func installSwagger(app freedom.Application) {
+		conf := conf.Get().App.Other["listen_addr"].(string)
+		config := swagger.Config{
+			URL:         fmt.Sprintf("http://localhost%s/swagger/doc.json", conf),
+			DeepLinking: true,
+		}
+		swaggerUI := swagger.CustomWrapHandler(&config, swaggerFiles.Handler)
+	
+		app.Iris().Get("/swagger", swaggerUI)
+		app.Iris().Get("/swagger/{any:path}", swaggerUI)
+	
+		freedom.Logger().Info(fmt.Sprintf("[Freedom] Now swagger listening on: %s", fmt.Sprintf("http://localhost%s/swagger/index.html", conf)))
 	}
 	
 	func installDatabase(app freedom.Application) {
