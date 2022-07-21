@@ -165,6 +165,9 @@ func (t *Generate) schema(tableColumns map[string][]column) (result []ObjectCont
 		sc.Name = tableName
 		structContent += "// " + tableName + " .\n"
 		structContent += "type " + tableName + " struct {\n"
+		structContent += "	CreatedAt time.Time\n"
+		structContent += "	UpdatedAt time.Time\n"
+		structContent += "	DeletedAt gorm.DeletedAt `gorm:\"index\"`\n"
 		structContent += "	changes map[string]interface{}\n"
 		for _, v := range item {
 			column := v.Tag

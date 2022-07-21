@@ -70,7 +70,7 @@ var (
 					pdata["Import"] = pdata["Import"].(string) + `"gorm.io/datatypes"` + "\n"
 				}
 
-				if len(list[index].AddMethods) > 0 {
+				if len(list[index].AddMethods) > 0 || len(list[index].SetMethods) > 0 {
 					pdata["Import"] = pdata["Import"].(string) + `"gorm.io/gorm"` + "\n"
 				}
 				pdata["Import"] = pdata["Import"].(string) + ")"
